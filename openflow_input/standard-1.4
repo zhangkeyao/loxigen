@@ -222,6 +222,12 @@ enum ofp_action_type(wire_type=uint16_t) {
     OFPAT_SET_FIELD = 0x19,
     OFPAT_PUSH_PBB = 0x1a,
     OFPAT_POP_PBB = 0x1b,
+    OFPAT_PUSH_SDN_TUNNEL = 0x50,
+    OFPAT_POP_SDN_TUNNEL = 0x51,
+    OFPAT_PUSH_GRE_TUNNEL = 0x52,
+    OFPAT_POP_GRE_TUNNEL = 0x53,
+    OFPAT_PUSH_VXLAN_TUNNEL = 0x54,
+    OFPAT_POP_VXLAN_TUNNEL = 0x55,
     OFPAT_EXPERIMENTER = 0xffff,
 };
 

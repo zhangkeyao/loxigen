@@ -1,0 +1,50 @@
+//added by keyaozhang
+
+#version any
+
+struct of_action_push_sdn_tunnel : of_action {
+    uint16_t type == 80;
+    uint16_t len;
+    of_ipv4_t src_ip;
+    of_ipv4_t dst_ip;
+    pad(1);
+    uint8_t id_length;
+    uint16_t tun_id1;
+    uint16_t tun_id2;
+    uint16_t tun_id3;
+    pad(4);
+};
+
+struct of_action_pop_sdn_tunnel : of_action {
+    uint16_t type == 81;
+    uint16_t len;
+    pad(4);
+};
+
+struct of_action_push_gre_tunnel : of_action {
+    uint16_t type == 82;
+    uint16_t len;
+    of_ipv4_t src_ip;
+    of_ipv4_t dst_ip;
+    pad(4);
+};
+
+struct of_action_pop_gre_tunnel : of_action {
+    uint16_t type == 83;
+    uint16_t len;
+    pad(4);
+};
+
+struct of_action_push_vxlan_tunnel : of_action {
+    uint16_t type == 84;
+    uint16_t len;
+    of_ipv4_t src_ip;
+    of_ipv4_t dst_ip;
+    uint32_t vx_vni;
+};
+
+struct of_action_pop_vxlan_tunnel : of_action {
+    uint16_t type == 85;
+    uint16_t len;
+    pad(4);
+};
